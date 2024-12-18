@@ -33,7 +33,11 @@ public class DepartmentTest {
 
         newDepartment.setEmployees(employees);
 
-
+        /*
+        //Con el método creado
+        newDepartment.addEmployee(employee1);
+        newDepartment.addEmployee(employee2);
+        */
         //Session para realizar cualquier operacion
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();

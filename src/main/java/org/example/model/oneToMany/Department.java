@@ -2,6 +2,7 @@ package org.example.model.oneToMany;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -15,7 +16,13 @@ public class Department {
     private String name;
 
     @OneToMany(mappedBy = "department", cascade=CascadeType.ALL)
-    private List<Employee> employees;
+    private List<Employee> employees = new ArrayList<>();
+
+    //Método para añadir empleados
+    public void addEmployee(Employee employee){
+        employees.add(employee);
+        employee.setDepartment(this);
+    }
 
     public Department() {
     }
